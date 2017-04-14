@@ -1,0 +1,16 @@
+travelmode:
+  googleApiKey: AIzaSyAQfy94LRh_YxjBjHxSetaSwU7QoEH4GNM
+  fallbackResponse: Please try again later.
+  apiUriTemplate: https://maps.googleapis.com/maps/api/directions/json?origin=<from>&destination=<to>&mode=<travelMode>&departure_time=<departureTimestamp>&traffic_model=<trafficModel>&key=<key>
+  trafficModel: pessimistic
+
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port:8080}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
